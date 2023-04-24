@@ -1,0 +1,27 @@
+<div class='card my-3 p-3 rounded'>
+  <a>
+    <img class="card-img-top" [src]="product.photo.url" variant='top' style="height:300px" />
+  </a>
+  <div class="card-body">
+    <a>
+      <h5 class="card-title">
+        <strong>{{product.title}}</strong>
+      </h5>
+    </a>
+    <div class="card-text">
+      <strong>Tags:</strong><span *ngFor=" let tag of product.tags">
+        <span class="badge text-bg-secondary" style="margin-left:0.5rem" *ngFor="let item of getTags(tag)">
+          {{item}}
+        </span>
+      </span>
+      <div *ngFor="let attribute of getAttributes(product.attributes[0])">
+        <div>
+          {{getObjectProperties(attribute)}}
+
+        </div>
+      </div>
+    </div>
+    <strong>Price: </strong>
+    <span class="card-text">₹{{product.price}}</span>
+  </div>
+</div>

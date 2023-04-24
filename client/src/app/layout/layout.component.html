@@ -1,0 +1,19 @@
+<div class="d-flex flex-col justify-content-center align-items-center" style="min-height:90vh">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <app-login *ngIf="showLoginPage"></app-login>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+            <app-register *ngIf="!showLoginPage"></app-register>
+        </div>
+        <div class="d-flex justify-content-center" *ngIf="showLoginPage">
+            <p>Don't have an account? <a href="javascript:void(0);" class="ms-2" (click)="changePage()">Sign Up</a></p>
+        </div>
+        <div class="d-flex justify-content-center" *ngIf="!showLoginPage">
+            <p>Already have an account? <a href="javascript:void(0);" class="ms-2" (click)="changePage()">Login</a></p>
+        </div>
+    </div>
+
+
+
+</div>
